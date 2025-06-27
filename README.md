@@ -2,15 +2,16 @@
 
 A full-stack web application that allows users to upload **brain MRI images** and receive **AI-based predictions** about the type of tumor. The system uses:
 
-* 🖼️ A Java-based web interface that sends images to FastAPI via REST API
-* 🚀 FastAPI (backend) to process the image and return the prediction
-* 🧠 A machine learning model to classify brain tumors
+* 🖼️ A Java-based web interface that sends images to FastAPI via REST API  
+* 🚀 FastAPI (backend) to process the image and return the prediction  
+* 🧠 A machine learning model to classify brain tumors  
+
+---
 
 ## 🔍 Features
 
 * Upload brain MRI image (JPG/PNG)
 * Automatically detects tumor type:
-
   * **Glioma Tumor**
   * **Meningioma Tumor**
   * **Pituitary Tumor**
@@ -34,10 +35,10 @@ A full-stack web application that allows users to upload **brain MRI images** an
 
 ## 🚀 How the System Works
 
-1. **User uploads** an MRI image through the interface.
-2. The Java application sends the image to **FastAPI** via REST API.
-3. The backend loads the ML model and predicts **the tumor type**.
-4. The result is shown to the user as a simple text message.
+1. **User uploads** an MRI image through the interface.  
+2. The Java application sends the image to **FastAPI** via REST API.  
+3. The backend loads the ML model and predicts **the tumor type**.  
+4. The result is shown to the user as a simple text message.  
 
 ---
 
@@ -75,13 +76,49 @@ cd JavaSpring/
 
 Then visit: `http://localhost:8080`
 
+### 4. Install Python Dependencies
+
+If you're using a virtual environment (recommended), do the following inside the `Python/` directory:
+
+```bash
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Then install dependencies
+pip install -r requirements.txt
+```
+
 ---
 
 ## 🧠 The AI Model
 
-* Trained on labeled MRI dataset (e.g., Kaggle brain tumor dataset)
-* Preprocessing includes resizing, grayscale conversion, etc.
-* Classification using ML algorithms like RandomForest or SVM
+* Trained on labeled MRI dataset (e.g., Kaggle brain tumor dataset)  
+* Preprocessing includes resizing, grayscale conversion, etc.  
+* Classification using ML algorithms like RandomForest or SVM  
+* Dataset folders should be placed inside the project like this:
+
+```
+mri-brain-tumor-detector/
+└── dataset/
+    ├── Training/
+    └── Testing/
+```
+
+And used in code like this:
+
+```python
+import os
+
+base_path = os.path.join(os.getcwd(), 'dataset')
+train_path = os.path.join(base_path, 'Training')
+test_path = os.path.join(base_path, 'Testing')
+```
 
 ---
 
@@ -92,11 +129,18 @@ mri-brain-tumor-detector/
 ├── Python/
 │   ├── main.py
 │   ├── model.pkl
+│   ├── requirements.txt
 │   └── utils/
 ├── JavaSpring/
 │   ├── src/
 │   ├── templates/
 │   └── application.properties
+├── dataset/
+│   ├── Training/
+│   └── Testing/
+├── docs/
+│   └── sample_mri.jpg
+├── .gitignore
 └── README.md
 ```
 
@@ -110,5 +154,5 @@ MIT License – Free for personal and educational use.
 
 ## ✨ Credits
 
-* Developed by \Yussuf Ahmed
+* Developed by [Yussuf Ahmed]  
 * MRI Dataset: [Kaggle Brain MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
