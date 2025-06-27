@@ -1,57 +1,114 @@
-# 🧠 MRI Brain Tumor Detection System
+# 🧠 Brain Tumor Detection System Using MRI Scans
 
-A full-stack web application that allows users to upload **MRI brain scans** and get **AI-powered tumor predictions**. The system uses:
+A full-stack web application that allows users to upload **brain MRI images** and receive **AI-based predictions** about the type of tumor. The system uses:
 
-- 🖼️ Spring Boot (Frontend) for file upload and REST integration  
-- 🚀 FastAPI (Backend) for processing and prediction  
-- 🧠 Machine Learning model for classifying brain tumors  
+* 🖼️ A Java-based web interface that sends images to FastAPI via REST API
+* 🚀 FastAPI (backend) to process the image and return the prediction
+* 🧠 A machine learning model to classify brain tumors
 
 ## 🔍 Features
 
-- Upload MRI scan images (JPG/PNG)
-- Automatically detects tumor type:
-  - **Glioma**
-  - **Meningioma**
-  - **Pituitary**
-  - or **No Tumor**
-- Clean UI with responsive design
-- Simple REST-based communication between frontend and backend
+* Upload brain MRI image (JPG/PNG)
+* Automatically detects tumor type:
+
+  * **Glioma Tumor**
+  * **Meningioma Tumor**
+  * **Pituitary Tumor**
+  * or **No Tumor**
+* Simple and fast user interface
+* Lightweight and smooth REST communication between Java application and FastAPI server
 
 ---
 
 ## 🧱 Tech Stack
 
-| Layer       | Technology         |
-|-------------|--------------------|
-| Frontend    | Spring Boot (Java) |
-| Backend     | FastAPI (Python)   |
-| ML Model    | Scikit-learn or similar |
-| Communication | REST API + JSON |
-| Deployment  | Docker (optional)  |
+| Layer         | Technology              |
+| ------------- | ----------------------- |
+| Interface     | Java + HTML             |
+| Backend       | FastAPI (Python)        |
+| ML Model      | Scikit-learn or similar |
+| Communication | REST API + JSON         |
+| Deployment    | Docker (optional)       |
 
 ---
 
-## 🚀 How It Works
+## 🚀 How the System Works
 
-1. **User uploads** an MRI image from the Spring Boot web form.
-2. The image is sent to the **FastAPI backend** using `RestTemplate.exchange`.
-3. The backend loads the trained ML model and **predicts the tumor class**.
-4. The result (as a string) is sent back and **displayed to the user**.
+1. **User uploads** an MRI image through the interface.
+2. The Java application sends the image to **FastAPI** via REST API.
+3. The backend loads the ML model and predicts **the tumor type**.
+4. The result is shown to the user as a simple text message.
 
 ---
 
 ## 🧪 Sample Prediction
 
-| Input Image | Predicted Tumor Type |
-|-------------|-----------------------|
-| ![sample](docs/sample_mri.jpg) | Glioma |
+| Input Image                    | Predicted Tumor Type |
+| ------------------------------ | -------------------- |
+| ![sample](docs/sample_mri.jpg) | Glioma               |
 
 ---
 
 ## 🛠️ Getting Started
 
-### 1. Clone the repo
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/mri-brain-tumor-detector.git
 cd mri-brain-tumor-detector
+```
+
+### 2. Run the FastAPI Backend
+
+```bash
+cd backend/
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+### 3. Run the Java Interface
+
+```bash
+cd frontend/
+./mvnw spring-boot:run
+```
+
+Then visit: `http://localhost:8080`
+
+---
+
+## 🧠 The AI Model
+
+* Trained on labeled MRI dataset (e.g., Kaggle brain tumor dataset)
+* Preprocessing includes resizing, grayscale conversion, etc.
+* Classification using ML algorithms like RandomForest or SVM
+
+---
+
+## 📁 Project Structure
+
+```
+mri-brain-tumor-detector/
+├── Python/
+│   ├── main.py
+│   ├── model.pkl
+│   └── utils/
+├── JavaSpring/
+│   ├── src/
+│   ├── templates/
+│   └── application.properties
+└── README.md
+```
+
+---
+
+## 📄 License
+
+MIT License – Free for personal and educational use.
+
+---
+
+## ✨ Credits
+
+* Developed by \Yussuf Ahmed
+* MRI Dataset: [Kaggle Brain MRI Dataset](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection)
