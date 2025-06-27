@@ -54,22 +54,22 @@ A full-stack web application that allows users to upload **brain MRI images** an
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/mri-brain-tumor-detector.git
+git clone https://github.com/yussufahmed33/mri-brain-tumor-detector
 cd mri-brain-tumor-detector
 ```
 
 ### 2. Run the FastAPI Backend
 
 ```bash
-cd backend/
+cd Python/
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
 
-### 3. Run the Java Interface
+### 3. Run the Java Spring
 
 ```bash
-cd frontend/
+cd JavaSpring/
 ./mvnw spring-boot:run
 ```
 
