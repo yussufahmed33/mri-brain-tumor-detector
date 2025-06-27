@@ -45,7 +45,7 @@ public class Controller {
     ResponseEntity<String> response = restTemplate.postForEntity(fastApiUrl, request, String.class);
     String fileName = file.getOriginalFilename();
     String base64Image = Base64.getEncoder().encodeToString(file.getBytes());
-    String imageSrc = "data:image/jpeg;base64," + base64Image; // لو PNG غيّر jpeg إلى png
+    String imageSrc = "data:image/jpeg;base64," + base64Image; 
 
 redirectAttributes.addFlashAttribute("imagePath", imageSrc);
     String result = response.getBody();
