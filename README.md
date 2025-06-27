@@ -111,4 +111,4 @@ MIT License – Free for personal and educational use.
 ## ✨ Credits
 
 * Developed by \Yussuf Ahmed
-* MRI Dataset: [Kaggle Brain MRI Dataset](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection)
+* MRI Dataset: [Kaggle Brain MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
