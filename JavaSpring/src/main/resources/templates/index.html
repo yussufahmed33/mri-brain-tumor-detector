@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>توقع أورام المخ</title>
+    <link rel="stylesheet" href="/style/style.css" />
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+
+<div class="container">
+    <h1>MRI Scan Prediction</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data" id="uploadForm">
+        <input type="file" name="file" id="fileInput" required />
+        <button type="submit">Send</button>
+    </form>
+
+    <div th:if="${result != null}">
+        <h2>Result:</h2>
+        <p id="predictionText" th:text="${result}"></p>
+    </div>
+
+    <div th:if="${imagePath != null}">
+        <h2>Uploaded MRI Image:</h2>
+        <img th:src="@{${imagePath}}" alt="MRI Image"
+             style="max-width: 100%; border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+    </div>
+</div>
+
+<script src="/js/background.js"></script>
+</body>
+</html>

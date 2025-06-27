@@ -1,0 +1,34 @@
+# Ignore Python virtual environment
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables / local settings
+.env
+*.env
+
+# MacOS / Windows system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode and IDE settings
+.vscode/
+.idea/
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Java (Spring) generated files
+target/
+*.class
